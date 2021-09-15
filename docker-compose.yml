@@ -1,7 +1,6 @@
 version: '2'
 services:
     angular:
-        container_name: SugamahA
         image: angular:latest
         ports:
             - 80:80
