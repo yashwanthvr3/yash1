@@ -8,4 +8,5 @@ COPY ./ /usr/src/app/
 RUN npm install
 
 EXPOSE 3003
-CMD [ "npm", "start" ]
+
+RUN npm start
