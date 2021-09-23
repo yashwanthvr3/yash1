@@ -1,34 +1,13 @@
 
-# Use official node image as the base image
+FROM node
 
-FROM node:latest as build
+WORKDIR /usr/src/app
 
-# Set the working directory
-
-WORKDIR /usr/local/app
-
-# Add the source code to app
-
-COPY ./ /usr/local/app/
-
-# Install all the dependencies
+COPY package*.json ./
+COPY index.js ./
+COPY ./app ./app
 
 RUN npm install
 
-# Generate the build of the application
-
-RUN npm run build
-
-# Stage 2: Serve app with nginx server
-# Use official nginx image as the base image
-
-FROM nginx:latest
-
-# Copy the build output to replace the default nginx contents.
-
-COPY --from=build /usr/local/app/dist/SugamahAngular /usr/share/nginx/html
-
-# Expose port 80
-
-
-EXPOSE 80
+EXPOSE 3000
+CMD [ "npm", "start" ]
