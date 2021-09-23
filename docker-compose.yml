@@ -3,4 +3,4 @@ services:
     angular:
         image: angular:latest
         ports:
-            - 80:80
+            - 3003:3003
