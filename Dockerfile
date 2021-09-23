@@ -9,4 +9,4 @@ RUN npm install
 
 EXPOSE 3003
 
-RUN npm start
+CMD npm start
