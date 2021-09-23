@@ -3,9 +3,7 @@ FROM node
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
-COPY index.html ./
-COPY ./app ./app
+COPY ./ /usr/src/app/
 
 RUN npm install
 
